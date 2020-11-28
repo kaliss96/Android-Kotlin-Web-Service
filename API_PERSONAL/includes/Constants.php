@@ -10,5 +10,5 @@
 	define('DB_PASSWORD','');
 
 	// aqui el nombre de la BD
-	define('DB_NAME', 'mibase');
+	define('DB_NAME', 'bdpersonal');
 

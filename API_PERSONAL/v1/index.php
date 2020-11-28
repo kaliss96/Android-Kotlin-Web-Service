@@ -38,7 +38,7 @@
 					$response['message'] = 'No hay datos en la BD';
 				}else{
 					$response['error'] = false; 
-					$response['hero'] = $listPersonal;
+					$response['personal'] = $listPersonal;
 				}
 			break; 
 			
