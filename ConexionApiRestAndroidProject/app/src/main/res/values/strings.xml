@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">ConexionApiRest</string>
+    <string name="app_name">Registro</string>
+    <string name="client_googleid">321702403504-mrsc2s4k626vn7kcudivlqi1ie4uvru4.apps.googleusercontent.com</string>
+
 </resources>

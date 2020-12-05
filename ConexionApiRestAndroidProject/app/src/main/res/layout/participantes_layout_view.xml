@@ -16,4 +16,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Cedula" />
+
+    <TextView
+        android:id="@+id/id_celular_partc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Celular" />
+
+    <TextView
+        android:id="@+id/id_correo_partc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Correo" />
+
 </LinearLayout>
