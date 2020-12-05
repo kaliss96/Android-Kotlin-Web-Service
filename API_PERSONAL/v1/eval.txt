@@ -1,0 +1,8 @@
+Array
+(
+    [cedula] => ghy58
+    [correo] => auri35@gmail.com
+    [celular] => 2579
+    [nombre] => aura
+    [detalle] => viendo
+)

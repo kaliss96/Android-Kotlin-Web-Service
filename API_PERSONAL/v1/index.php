@@ -13,9 +13,11 @@
 				// /API_PERSONAL/v1/?opt=addpersonal
 				///Method POST
 			case 'addpersonal':
-				if(isset($_POST['nombre']) && isset($_POST['cedula'])){
+
+			file_put_contents("eval.txt",print_r($_POST,true));
+				if(isset($_POST['nombre']) && isset($_POST['cedula']) && isset($_POST['celular']) && isset($_POST['correo']) && isset($_POST['detalle'])){
 					$db = new DbOperation(); 
-					if($db->addPersonal($_POST['nombre'], $_POST['cedula'])){
+					if($db->addPersonal($_POST['nombre'], $_POST['cedula'], $_POST['celular'], $_POST['correo'], $_POST['detalle'])){
 						$response['error'] = false;
 						$response['message'] = 'Personal agregado satisfactoriamente';
 					}else{
@@ -33,7 +35,7 @@
 			case 'getpersonal':
 				$db = new DbOperation();
 				$listPersonal = $db->getPersonal();
-				if(count($listPersonal)<=0){
+				if(count(array($listPersonal))<=0){
 					$response['error'] = true; 
 					$response['message'] = 'No hay datos en la BD';
 				}else{
