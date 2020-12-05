@@ -29,7 +29,7 @@ class Participantes : AppCompatActivity() {
     lateinit var txt_observaciones : EditText
     //lateinit var prefHelper: PrefHelper
 
-    private val URL_ROOT = "http://192.168.1.6/API_PERSONAL/v1/?opt="
+    private val URL_ROOT = "http://192.168.1.4/API_PERSONAL/v1/?opt="
     val URL_ADD_PERSONAL = URL_ROOT + "addpersonal"
     val URL_LISTAR_PERSONAL = URL_ROOT + "getpersonal"
 
