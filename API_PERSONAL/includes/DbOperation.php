@@ -39,14 +39,29 @@ class DbOperation
 			$temp['id'] = $item['id']; 
 			$temp['nombre'] = $item['nombre']; 
 			$temp['cedula'] = $item['cedula']; 
-			$temp['correo'] = $item['correo'];
-			$temp['celular'] = $item['celular'];
+			$temp['correo'] = $item['correo']; 
+			$temp['celular'] = $item['celular']; 
 			
 			  $this->db->query('SELECT id, detalle FROM lista_detalle where id_detalle='.$item['id']);
 		      $detalle = array();
+		      $temp2 = array();
 		      $row_detalle=$this->db->fetch();
-			
-			$temp['detalle'] = $row_detalle; 
+		     foreach($row_detalle as $item2)
+			 {
+				 if(isset($item2))
+				 { $temp2['id'] = $item2['detalle']; 
+					 $temp2['detalle'] = $item2['detalle']; 
+				 }
+				 else
+				 {
+					 $temp2['id'] = ""; 
+					 $temp2['detalle'] = ""; 
+					 
+				 }
+				 
+			 }  	
+		 
+				$temp['detalle'] = $temp2; 
 			
 			array_push($listapersonal, $temp);
 		}

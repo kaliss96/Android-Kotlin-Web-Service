@@ -1,8 +1,8 @@
 Array
 (
-    [cedula] => ghy58
-    [correo] => auri35@gmail.com
-    [celular] => 2579
-    [nombre] => aura
-    [detalle] => viendo
+    [cedula] => cbj58
+    [correo] => rt46@hik.com
+    [celular] => 2578
+    [nombre] => karina
+    [detalle] => yumis
 )

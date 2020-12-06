@@ -16,6 +16,8 @@ import com.android.volley.VolleyError
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.mylogin.DetalleParticipante
+import com.example.mylogin.ParticipanteAdapter
+import kotlinx.android.synthetic.main.activity_lista_participantes.*
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -39,10 +41,36 @@ class ListaParticipantes : AppCompatActivity() {
         myPartcipantListView.setOnItemClickListener(object : OnItemClickListener {
             override fun onItemClick(parent: AdapterView<*>?, view: View?,
                                      position: Int, id: Long) {
-                val participante_seleccion = myPartcipantList.get(position)
-                val intent = Intent(applicationContext, DetalleParticipante::class.java)
-                intent.putExtra("ID_PARTICIPANTE",participante_seleccion.id_servidor)
-                startActivity(intent)
+                val requestQueue = Volley.newRequestQueue(this@ListaParticipantes)
+                val stringRequest = object : StringRequest(Request.Method.POST, URL_GET_PERSONAL,
+                    Response.Listener<String> { response ->
+                        try {
+                            val obj = JSONObject(response)
+                            val array = obj.getJSONArray("listPersonal")
+/*
+                                val intent = Intent(application, DetalleParticipante::class.java)
+                                        .putExtra("id",id.toString())*/
+
+                            val parti1 = Participante("demo", "", "256 GB RAM", "","")
+                            val listaPartici = listOf(parti1)
+
+                            val adapter = ParticipanteAdapter(application, listaPartici)
+                            participanteListView.adapter = adapter
+
+                            val intent = Intent(application, DetalleParticipante::class.java)
+                            startActivity(intent)
+
+                        } catch (e: JSONException) {
+                            e.printStackTrace()
+                        }
+                    },
+                    object : Response.ErrorListener {
+                        override fun onErrorResponse(volleyError: VolleyError) {
+                            Toast.makeText(applicationContext, volleyError.message, Toast.LENGTH_LONG)
+                                .show()
+                        }
+                    }){}
+                requestQueue.add(stringRequest);
             }
         })
     }

@@ -39,6 +39,7 @@
 					$response['error'] = true; 
 					$response['message'] = 'No hay datos en la BD';
 				}else{
+					
 					$response['error'] = false; 
 					$response['listPersonal'] = $listPersonal;
 				}
@@ -54,5 +55,5 @@
 		$response['error'] = false; 
 		$response['message'] = 'Invalid Request';
 	}
-	
-	echo json_encode($response);
+	print_r(json_encode($response['listPersonal']));exit;
+	echo $response['listPersonal'];

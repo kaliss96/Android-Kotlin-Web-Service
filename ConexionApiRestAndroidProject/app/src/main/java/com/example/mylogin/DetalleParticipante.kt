@@ -4,16 +4,19 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.logindemo.Participante
 import com.example.logindemo.R
+import kotlinx.android.synthetic.main.activity_detalle_participante.*
 
 class DetalleParticipante : AppCompatActivity() {
-
-    private var id_detalle: TextView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalle_participante)
-        val particpante_id = intent.getStringExtra("ID_PARTICIPANTE")
-        id_detalle = findViewById<View>(R.id.idTxtDesc) as TextView
-        id_detalle!!.setText("valor recibido"+particpante_id)
+        var intent=getIntent()
+
+        val participante = intent.getSerializableExtra("participante") as Participante
+
+        txt_id.text = participante.detalle
+
     }
 }
