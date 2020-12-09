@@ -90,34 +90,29 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <com.google.android.gms.common.SignInButton
-                    android:id="@+id/sign_in_google_btn"
-                    android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/sign_out_google"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:visibility="invisible" />
 
-                <!--<Button
-                    android:id="@+id/buttonLogout"
-                    android:layout_width="match_parent"
+                    android:text="Sign out"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dispTxt" />
+
+                <Button
+                    android:id="@+id/logout_facebook"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="Salir"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_listar"
-                    /> -->
-            </LinearLayout>
+                    android:text="Sign out"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dispTxt"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <com.google.android.gms.common.SignInButton
-                    android:id="@+id/sign_in_facebook_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="invisible" />
             </LinearLayout>
 
         </LinearLayout>
+
     </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>

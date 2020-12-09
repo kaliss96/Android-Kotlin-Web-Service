@@ -10,8 +10,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.logindemo"
-        minSdkVersion 14
-        targetSdkVersion 20
+        minSdkVersion 15
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
 
@@ -45,4 +45,6 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
+    implementation 'com.facebook.android:facebook-android-sdk:4.42.0'
 }
