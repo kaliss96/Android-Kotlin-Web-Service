@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,12 +9,18 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
         <!-- EditText: Bio Info de Usuario-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
@@ -22,6 +28,13 @@
                 android:gravity="center_horizontal"
                 android:text="Registro"
                 tools:text="Registro" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/registro"
+                tools:srcCompat="@drawable/registro" />
 
             <EditText
                 android:id="@+id/txt_nombre"
@@ -37,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Cedula"
-                android:inputType="textPersonName" />
+                android:inputType="textCapCharacters"/>
 
             <EditText
                 android:id="@+id/txt_cel"
@@ -52,38 +65,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Correo Electrónico"
+                android:hint="correo@ejemplo.com"
                 android:inputType="textEmailAddress" />
 
             <EditText
                 android:id="@+id/txt_obs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="133dp"
                 android:ems="10"
                 android:gravity="start|top"
                 android:hint="Observaciones"
                 android:inputType="textMultiLine" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_agregar"
+                android:layout_width="390dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Registrar" />
 
-                <Button
-                    android:id="@+id/btn_agregar"
-                    android:layout_width="122dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Registrar" />
-
-                <Button
-                    android:id="@+id/btn_listar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Listar" />
-
-            </LinearLayout>
+            <Button
+                android:id="@+id/btn_listar"
+                android:layout_width="394dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Listar" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -107,7 +113,7 @@
                     android:text="Sign out"
                     android:visibility="invisible"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/dispTxt"/>
+                    app:layout_constraintTop_toBottomOf="@+id/dispTxt" />
 
             </LinearLayout>
 
@@ -115,4 +121,4 @@
 
     </androidx.core.widget.NestedScrollView>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

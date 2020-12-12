@@ -14,20 +14,12 @@ class DetalleParticipante : AppCompatActivity() {
         var intent=getIntent()
         val participante = intent.getSerializableExtra("participante") as Participante
 
-
         try{
         val obj =  JSONObject(participante.detalle)
           /*  Toast.makeText(applicationContext, obj.getString("id"), Toast.LENGTH_LONG)
                     .show()*/
 
-
-
-
-            idTxtDesc.text="realizado civiris: recibimos el valor: "+participante.nombre+"-"+obj.getString("id")
-
-
-
-
+            idTxtDesc.text=obj.getString("id")
 
         } catch (e: JSONException) {
             e.printStackTrace()
@@ -36,6 +28,5 @@ class DetalleParticipante : AppCompatActivity() {
         }
 
     }
-
 
 }
